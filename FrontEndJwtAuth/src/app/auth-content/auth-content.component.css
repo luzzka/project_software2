@@ -1,0 +1,49 @@
+.navbar .btn {
+  margin: 0 15px; /* Ajusta este valor según sea necesario */
+}
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.welcome-text {
+  font-size: 3vh;
+  color: white; /* Texto blanco */
+  font-family: 'Bookman Old Style', cursive;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  padding-top: 20px; /* Aumenta el espacio superior del nav */
+  padding-bottom: 20px; /* Aumenta el espacio inferior del nav */
+  padding-left: 30px;
+}
+
+.navbar-custom {
+  background-color: black; /* Color de fondo deseado */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  color: white; /* Color del texto deseado */
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: bold; /* Chuck en negrita */
+  font-size: 2em; /* Tamaño del texto */
+  margin-right: 20px; /* Espacio a la derecha */
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: white; /* Letras blancas */
+  margin-right: 25px; /* Más separación entre opciones del nav */
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+  text-decoration-color: white; /* Color del subrayado */
+}

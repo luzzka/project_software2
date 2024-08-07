@@ -1,0 +1,82 @@
+b {
+  font-weight: bold; /* Hace que el texto esté en negrita */
+}
+
+h1{
+  padding-bottom: 1%;
+  padding-left: 21px;
+
+}
+.btn {
+  color: white; /* Letras blancas */
+  background-color: black; /* Botones negros */
+  border-color: white; /* Borde blanco */
+  margin-right: 50px;
+  align-self: center; /* Alinear botones verticalmente en el centro */
+}
+
+.btn:hover {
+  color: black; /* Letras negras al pasar el mouse */
+  background-color: white; /* Fondo blanco al pasar el mouse */
+  border-color: black; /* Color del borde al pasar el mouse */
+
+}
+.text-muted {
+  color: #6c757d; /* Estilo de texto atenuado */
+}
+
+.card {
+  /* width: 400px; Ajusta el ancho de la tarjeta a 400px */
+  background-color: white; /* Fondo blanco */
+  color: black; /* Letras negras */
+  border-radius: 15px; /* Borde redondeado */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Sombra en los bordes */
+  margin-right: 20px;
+  border-width: 2px; /* Ajusta el grosor del borde de la tarjeta */
+  transition: transform 0.3s;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  border-radius: 4px;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.dropdown-menu {
+  min-width: auto;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.project-card-dropdown {
+  position: absolute;
+  z-index: 1000; /* Ajusta este valor según sea necesario para asegurarte de que el dropdown esté por encima de las tarjetas vecinas */
+}

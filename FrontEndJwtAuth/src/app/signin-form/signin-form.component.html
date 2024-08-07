@@ -1,0 +1,63 @@
+<body class="d-flex w-100 h-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll" style="min-height: 150vh;">
+<div class="h-100 container-fluid">
+  <div class="h-100 row d-flex align-items-stretch">
+    <div class=" col-md-7 col-lg-6 col-xl-5 d-flex align-items-start flex-column px-vw-5">
+      <header class="mb-auto py-vh-2 ">
+        <a class="navbar-brand pe-md-4 fs-4  col-md-auto text-center" >
+        </a>
+      </header>
+
+      <main class="mb-auto mx-auto">
+        <h1 class="mb-5">Registrar nueva cuenta</h1>
+        <form (ngSubmit)="onSubmitRegister()" autocomplete="off">
+          <!-- Para el nombre -->
+          <div class="mb-3">
+            <label class="form-label">Nombres <span></span></label>
+            <input type="text" class="form-control custom-input form-control-lg bg-gray-800 border-dark" [(ngModel)]="nombres" name="fakename" autocomplete="off">
+          </div>
+
+          <!-- Para los apellidos -->
+          <div class="mb-3">
+            <label class="form-label">Apellidos</label>
+            <input type="text" class="form-control custom-input form-control-lg bg-gray-800 border-dark" [(ngModel)]="apellidos" name="fakeapellidos" autocomplete="off">
+          </div>
+
+          <!-- Para el número de teléfono -->
+          <div class="mb-3">
+            <label class="form-label">Número de Teléfono</label>
+            <input type="tel" class="form-control custom-input form-control-lg bg-gray-800 border-dark" name="faketelefono" [(ngModel)]="telefono" autocomplete="off">
+          </div>
+
+          <!-- Para correo -->
+          <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" class="form-control custom-input form-control-lg bg-gray-800 border-dark" name="fakecorreo" [(ngModel)]="correo" autocomplete="off">
+          </div>
+
+          <!-- Para el nombre de usuario -->
+          <div class="mb-3">
+            <label class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control custom-input form-control-lg bg-gray-800 border-dark" name="fakelogin" [(ngModel)]="login" autocomplete="off">
+          </div>
+
+          <!-- Para contraseña -->
+          <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control form-control-lg bg-gray-800 border-dark custom-input" [(ngModel)]="password" name="fakepassword" autocomplete="off">
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="isAdmin" name="isAdmin" class="form-check-input" [(ngModel)]="esAdministrador" />
+            <label class="form-check-label" for="isAdmin">Es Administrador</label>
+          </div>
+
+          <button type="submit" class="btn btn-white btn-xl mb-3 d-block mx-auto" style="margin-top: 30px;">
+            Ingresar
+          </button>
+        </form>
+      </main>
+    </div>
+    <div class="col-md-5 col-lg-6 col-xl-7 gradient"></div>
+  </div>
+</div>
+</body>

@@ -1,0 +1,30 @@
+<div class="card h-100 shadow-sm" style="cursor: pointer;" (click)="toggleDropdown($event)">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div class="dropdown">
+        <h5 class="card-title">{{ project.nombreProyecto }}</h5>
+        <ul class="dropdown-menu dropdown-menu-lg-start project-card-dropdown"  aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" (click)="borrarProyecto()">Eliminar</a></li>
+          <li><a class="dropdown-item" (click)="onUpdateProject($event)">Actualizar Datos</a></li>
+          <li><a class="dropdown-item" (click)="onMostrarTareas()">Administrar Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="card-text">{{ project.descripcionProyecto}}</p>
+    <div class="d-flex justify-content-between mb-1">
+      <small>Progreso</small>
+      <small>{{ 20 }}%</small> <!---->
+    </div>
+    <div class="progress mb-2"> <!--===100-->
+      <div class="progress-bar"
+           [ngClass]="{'bg-danger': 20 < 50, 'bg-success': 20 > 100}"
+           role="progressbar" [style.width.%]="20" [attr.aria-valuenow]="20" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="d-flex flex-column">
+      <small><b>Fecha de inicio: </b> <span class="text-muted">{{ project.fechaInicioProyecto | date: 'dd/MM/yyyy' }}</span></small>
+      <small><b>Fecha de finalización: </b> <span class="text-muted">{{ project.fechaFinProyecto | date: 'dd/MM/yyyy' }}</span></small>
+      <small><b>Tipo: </b> <span class="text-muted">{{ project.tipo }}</span></small>
+      <small><b>Estado: </b> <span class="text-muted">{{ project.estado }}</span></small>
+    </div>
+  </div>
+</div>

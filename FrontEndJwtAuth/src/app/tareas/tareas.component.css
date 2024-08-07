@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  width: 90%; /* Tamaño fijo pero responsivo */
+  max-width: 800px; /* Máximo ancho de 800px */
+}
+
+.dark-header {
+  background-color: #333;
+  color: white;
+}
+
+.dark-table th
+{
+  background-color: black;
+  color: white;
+}
+.dark-table td {
+  background-color: #777;
+  color: white;
+}
+
+.btn-dark {
+  background-color: #000;
+  color: white;
+}
+
+.attachment-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.attachment-cards .card {
+  width: 100%;
+  margin: 10px;
+}
+
+.attachment-cards .card-title {
+  font-size: 1.2rem;
+}
+
+.attachment-cards .btn-primary {
+  margin-top: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.card-body h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.progress {
+  height: 10px;
+}
+.custom-card {
+  background-color: black; /* Cambia a tu color deseado */
+  color: white; /* Cambia a tu color de texto deseado */
+}

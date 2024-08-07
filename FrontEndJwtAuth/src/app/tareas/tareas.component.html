@@ -1,0 +1,102 @@
+<!-- Estadisticas-->
+<div class="d-flex justify-content-between align-items-center mb-4" style="transform: translate(25px,25px)">
+  <button class="btn btn-dark" (click)="newTask()" >Crear Tarea</button>
+  <button class="btn btn-outline-dark" (click)="toggleShowTareasComponent()" style="transform: translate(-50%,0px)" >Regresar a Proyectos</button>
+</div>
+<div class="row justify-content-center mb-4" style="margin-top: 50px">
+  <div class="col-md-3">
+    <div class="card text-center custom-card">
+      <div class="card-body">
+        <h4 class="card-title">Tareas</h4>
+        <h2>{{getNumeroTareas()}}</h2>
+        <p>{{getNumeroTareasCompletadas()}} Completadas</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card text-center custom-card">
+      <div class="card-body">
+        <h4 class="card-title">Tareas Activas</h4>
+        <h2>{{getNumeroTareasActivas()}}</h2>
+        <p> <br></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card text-center custom-card">
+      <div class="card-body">
+        <h4 class="card-title">Productividad</h4>
+        <h2>{{getProductividad()}}%</h2>
+        <p>{{getPorcentajeTareasFinalizadas()}}% Completado</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Tabla -->
+<div class="container">
+  <table class="table dark-table text-center table-responsive">
+    <thead>
+    <tr class="dark-header">
+      <th>Título</th>
+      <th>Plazo</th>
+      <th>Estado</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of tasks; let i = index">
+      <td>{{ task.title }}</td>
+      <td>{{ getPlazo(task.creationDate, task.dueDate) }}</td>
+      <td>{{ task.status }}</td>
+      <td>
+        <button type="button" class="btn btn-dark"  data-bs-toggle="modal" [attr.data-bs-target]="'#taskModal' + i">
+          Ver Detalles
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-light me-2">
+          <i class="fas fa-upload"></i>
+        </button>
+        <button class="btn btn-danger me-2">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+        <button class="btn btn-warning me-2">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngFor="let task of tasks; let i = index" class="modal fade" [id]="'taskModal' + i" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h2 class="modal-title" id="taskModalLabel">{{ task.title }}</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Descripción:</strong> {{ task.description }}</p>
+        <p><strong>Fecha de Creación:</strong> {{ task.creationDate }}</p>
+        <p><strong>Fecha de Finalización:</strong> {{ task.dueDate }}</p>
+        <p><strong>Archivos Adjuntos:</strong></p>
+        <div class="attachment-cards">
+          <div *ngFor="let attachment of task.attachments" class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ attachment.name }}</h5>
+              <a [href]="attachment.link" class="btn btn-primary" target="_blank">Ver Archivo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="background: linear-gradient(24deg, #1717e5, transparent 21%), linear-gradient(198deg, rgba(255, 193, 7, 0.2) 11%, transparent 0%), linear-gradient(50deg, #6610f2 5%, #6f42c1 32%, #d63384 35%, #dc3545 65%, #fd7e14 83%, #ffc107 91%);
+}
+
+">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
